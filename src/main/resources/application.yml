@@ -1,0 +1,24 @@
+#配置日志输出的格式
+#logging:
+#  pattern:
+    # %d(日期) %msg(信息) %n(换行)
+    #console: "%d - %msg%n"
+  #配置日志文件的路径
+#  path: /Users/xiongzhilong/Desktop/log
+  # 如果只配置上面的path，默认会生成一个spring.log文件，如果想自己设置日志文件名称，按照下面file配置即可
+#  file: /Users/xiongzhilong/Desktop/log/sell.log
+  # 日志级别，将系统默认的info级别设置成debug级别
+#  level: debug
+#  level:
+    # 具体设置哪个类的日志级别
+#    com.xiongya.sell.loggerTest: debug
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.104:3306/weixin?useUnicode=true&characterEncoding=utf8
+  jpa:
+    show-sql: true
