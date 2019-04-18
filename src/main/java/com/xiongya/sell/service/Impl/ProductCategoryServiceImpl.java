@@ -4,6 +4,7 @@ import com.xiongya.sell.dao.ProductCategoryDao;
 import com.xiongya.sell.dataObject.ProductCategory;
 import com.xiongya.sell.service.ProductCategoryService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.util.Optional;
 @Service
 public class ProductCategoryServiceImpl implements ProductCategoryService {
 
+    @Autowired
     private ProductCategoryDao productCategoryDao;
 
     @Override
@@ -36,7 +38,8 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList) {
-        return productCategoryDao.findByCategoryTypeIn(categoryTypeList);
+        List<ProductCategory> list = productCategoryDao.findByCategoryTypeIn(categoryTypeList);
+        return list;
     }
 
     @Override

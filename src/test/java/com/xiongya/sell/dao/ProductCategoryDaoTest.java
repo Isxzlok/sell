@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import javax.xml.bind.SchemaOutputResolver;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * @Author xiongzhilong
@@ -31,6 +34,14 @@ public class ProductCategoryDaoTest {
 
         productCategoryDao.save(productCategory);
 
+    }
+
+    @Test
+    public void fun(){
+        List<Integer> list = new ArrayList<>();
+        list.add(4);
+        List<ProductCategory> list1 = productCategoryDao.findByCategoryTypeIn(list);
+        System.out.println(list1);
     }
 
 }

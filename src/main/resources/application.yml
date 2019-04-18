@@ -1,3 +1,5 @@
+
+
 #配置日志输出的格式
 #logging:
 #  pattern:
@@ -19,6 +21,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://192.168.1.104:3306/weixin?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.1.140:3306/weixin?useUnicode=true&characterEncoding=utf8
+#    type: com.alibaba.druid.pool.DruidDataSource
   jpa:
     show-sql: true
+server:
+  servlet:
+    context-path: /sell
