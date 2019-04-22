@@ -1,13 +1,10 @@
-package com.xiongya.sell.dataObject;
+package com.xiongya.sell.dto;
 
+import com.xiongya.sell.dataObject.OrderDetail;
 import com.xiongya.sell.enums.OrderStatusEnums;
 import com.xiongya.sell.enums.PayStatusEnums;
-import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -15,14 +12,9 @@ import java.util.List;
 /**
  * @Author xiongzhilong
  * @Email 2584496774@qq.com
- * @Date create by 2019-04-19 16:34
- *
- * 订单
+ * @Date create by 2019-04-22 20:04
  */
-@Entity
-@Data
-@DynamicUpdate
-public class OrderMaster {
+public class OrderDto {
 
     /**
      * 订单id
@@ -58,12 +50,12 @@ public class OrderMaster {
     /**
      * 订单状态，默认为新下单，
      */
-    private Integer orderStatus = OrderStatusEnums.NEW.getCode();
+    private Integer orderStatus;
 
     /**
      * 支付状态
      */
-    private Integer payStatus = PayStatusEnums.WAIT.getCode();
+    private Integer payStatus;
 
     /**
      * 创建时间
@@ -75,8 +67,8 @@ public class OrderMaster {
      */
     private Date updateTime;
 
-    /*
-    @Transient //与数据库关联的时候，忽略这个字段
+
     List<OrderDetail> orderDetailList;
-    */
+
+
 }
