@@ -3,6 +3,7 @@ package com.xiongya.sell.dto;
 import com.xiongya.sell.dataObject.OrderDetail;
 import com.xiongya.sell.enums.OrderStatusEnums;
 import com.xiongya.sell.enums.PayStatusEnums;
+import lombok.Data;
 
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import java.util.List;
  * @Email 2584496774@qq.com
  * @Date create by 2019-04-22 20:04
  */
+@Data
 public class OrderDto {
 
     /**

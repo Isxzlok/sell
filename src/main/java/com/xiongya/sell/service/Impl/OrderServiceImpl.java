@@ -1,12 +1,16 @@
 package com.xiongya.sell.service.Impl;
 
 import com.xiongya.sell.dao.OrderDetailDao;
+import com.xiongya.sell.dao.ProductInfoDao;
+import com.xiongya.sell.dataObject.OrderDetail;
 import com.xiongya.sell.dto.OrderDto;
 import com.xiongya.sell.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author xiongzhilong
@@ -19,9 +23,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderDetailDao orderDetailDao;
 
+    @Autowired
+    private ProductInfoDao productInfoDao;
+
     @Override
     public OrderDto create(OrderDto orderDto) {
 
+        List<OrderDetail> orderDetailList = orderDto.getOrderDetailList();
         return null;
     }
 
