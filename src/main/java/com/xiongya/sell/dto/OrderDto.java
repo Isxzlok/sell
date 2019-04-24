@@ -21,7 +21,6 @@ public class OrderDto {
     /**
      * 订单id
      */
-    @Id
     private String orderId;
 
     /**
