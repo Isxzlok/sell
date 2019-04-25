@@ -71,13 +71,19 @@ public class OrderServiceImplTest {
 
     @Test
     public void cancel() {
+        OrderDto orderDto = orderService.findOne("1556103538451914465");
+        orderService.cancel(orderDto);
     }
 
     @Test
     public void finish() {
+        OrderDto orderDto = orderService.findOne("1556103538451914465");
+        orderService.finish(orderDto);
     }
 
     @Test
     public void paid() {
+        OrderDto orderDto = orderService.findOne("1556103538451914465");
+        orderService.paid(orderDto);
     }
 }

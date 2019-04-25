@@ -15,7 +15,14 @@ public enum ResultEnums {
 
     ORDERDETAIL_NO_EXIST(13, "订单详情不存在"),
 
-    ORDER_STATUS_ERROR(14, "不能取消该订单");
+    ORDER_STATUS_ERROR(14, "不能取消该订单"),
+
+    ORDER_UPDATE_ERROR(15, "更新订单失败"),
+
+    ORDER_DETAIL_IS_NULL(16, "该订单没有商品"),
+
+    ORDER_PAY_STATUS_ERROR(17, "该订单已经支付")
+    ;
 
 
 
