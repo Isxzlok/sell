@@ -97,10 +97,8 @@ public class OrderServiceImpl implements OrderService {
                 .map(e -> new CartDto(e.getProductId(), e.getProductQuantity()))
                 .collect(Collectors.toList());
         productInfoService.decreaseStock(cartDtoList);
-
-
-
-        return null;
+        OrderDto orderDto1 = OrderMaster2OrderDtoTOConverter.convert(orderMaster);
+        return orderDto1;
     }
 
     @Override
@@ -139,7 +137,7 @@ public class OrderServiceImpl implements OrderService {
         List<OrderDto> orderDtoList =
                 OrderMaster2OrderDtoTOConverter.convert(page.getContent());
         Page<OrderDto> orderDtoPage =
-                new PageImpl<OrderDto>(orderDtoList, pageable, page.getTotalElements());
+                new PageImpl<>(orderDtoList, pageable, page.getTotalElements());
 
         return orderDtoPage;
     }

@@ -21,7 +21,11 @@ public enum ResultEnums {
 
     ORDER_DETAIL_IS_NULL(16, "该订单没有商品"),
 
-    ORDER_PAY_STATUS_ERROR(17, "该订单已经支付")
+    ORDER_PAY_STATUS_ERROR(17, "该订单已经支付"),
+
+    PARAMS_ERROR(18, "参数错误"),
+
+    CART_NOT_NULL(14, "购物车为空")
     ;
 
 
