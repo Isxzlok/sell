@@ -6,6 +6,7 @@ import com.xiongya.sell.dto.OrderDto;
 import com.xiongya.sell.enums.ResultEnums;
 import com.xiongya.sell.form.OrderForm;
 import com.xiongya.sell.form.OrderListForm;
+import com.xiongya.sell.service.BuyerService;
 import com.xiongya.sell.service.OrderService;
 import com.xiongya.sell.utils.ResultVoUtils;
 import com.xiongya.sell.vo.ResultVo;
@@ -39,6 +40,9 @@ public class BuyerOrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private BuyerService buyerService;
 
     //创建订单
     @RequestMapping("/create")
@@ -97,8 +101,9 @@ public class BuyerOrderController {
             log.error("【订单详情】参数不正确，openid={}, orderId={}",openid, orderId);
             throw new SellException(ResultEnums.PARAMS_ERROR);
         }
-        //TODO 不安全做法，改进
-        OrderDto orderDto = orderService.findOne(orderId);
+
+        OrderDto orderDto = buyerService.findOrderOne(openid, orderId);
+
         return ResultVoUtils.success(orderDto);
     }
 
@@ -110,9 +115,7 @@ public class BuyerOrderController {
             log.error("【订单详情】参数不正确，openid={}, orderId={}",openid, orderId);
             throw new SellException(ResultEnums.PARAMS_ERROR);
         }
-        //TODO 不安全，改进
-        OrderDto orderDto = orderService.findOne(orderId);
-        OrderDto orderDto1 = orderService.cancel(orderDto);
+        OrderDto orderDto = buyerService.cancelOrder(openid, orderId);
 
         return ResultVoUtils.success();
     }

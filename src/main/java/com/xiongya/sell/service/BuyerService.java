@@ -14,5 +14,5 @@ public interface BuyerService {
     OrderDto findOrderOne(String openid, String orderId);
 
     //取消订单
-
+    OrderDto cancelOrder(String openid, String orderId);
 }

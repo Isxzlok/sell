@@ -25,7 +25,9 @@ public enum ResultEnums {
 
     PARAMS_ERROR(18, "参数错误"),
 
-    CART_NOT_NULL(14, "购物车为空")
+    CART_NOT_NULL(14, "购物车为空"),
+
+    ORDER_OWNER_ERROR(15, "订单不属于该用户")
     ;
 
 
