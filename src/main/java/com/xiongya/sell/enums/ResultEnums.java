@@ -27,7 +27,9 @@ public enum ResultEnums {
 
     CART_NOT_NULL(14, "购物车为空"),
 
-    ORDER_OWNER_ERROR(15, "订单不属于该用户")
+    ORDER_OWNER_ERROR(15, "订单不属于该用户"),
+
+    WECHAT_MP_ERROR(16, "微信网页授权错误")
     ;
 
 
